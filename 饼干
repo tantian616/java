@@ -1,0 +1,35 @@
+package test;
+
+import java.util.Scanner;
+
+public class homework {
+
+	public static void main(String[] args) {
+		//数据定义
+		final int BOX=24;
+		final int CONTAINER=75;
+		//驼峰命名
+		int number;
+		int BoxNum;
+		int ContainerNum;
+        int BiscuitsLeft;
+        int BoxLeft;
+        
+        //数据输入
+        Scanner scan=new Scanner(System.in);
+        //输入提示语
+        System.out.print("输入饼干的数量:");
+        number=scan.nextInt();
+        //数据处理
+        BoxNum=number/BOX;
+        ContainerNum=BoxNum/CONTAINER;
+        BiscuitsLeft=number%24;
+        BoxLeft=BoxNum%75;
+        //数据输出
+        System.out.println("盒子的数量："+BoxNum);
+        System.out.println("箱子的数量："+ContainerNum);
+        System.out.println("丢弃饼干的数量："+BiscuitsLeft);
+        System.out.println("丢弃盒子的数量："+BoxLeft);
+	}
+
+}
