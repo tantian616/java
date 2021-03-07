@@ -1,0 +1,46 @@
+package test;
+
+import java.util.Scanner;
+
+public class test2 {
+	public static void main(String[] args) {
+		//数据定义
+		final double colour=0.1;
+		final double regular=0.15;
+		final double fancy=0.25;
+		final double card=0.02;
+		final double glass=0.07;
+		final double crown=0.35;
+		
+		double wide;
+		double length;
+		int kind;
+        String colo;
+		int num;
+		double cost;
+		
+		//数据输入
+		Scanner scan=new Scanner(System.in);
+		//输入提示语
+		System.out.print("输入图片的长度，宽度，以英尺为单位:");
+        length=scan.nextDouble();
+        wide=scan.nextDouble();
+        System.out.print("输入框架的类型1（常规型）或2（精美型）:");
+        kind=scan.nextInt();
+        System.out.print("输入你想要的颜色:");
+        colo=scan.nextLine();
+        System.out.print("输入你想要的王冠数量（不需要输入0）:");
+        num=scan.nextInt();
+        
+        //数据处理
+        if(kind==1) {
+        	
+        	    cost=(wide+length)*2*(regular+colour)+num*crown+wide*length*(glass+card);
+        }else {
+        		cost=(wide+length)*2*(fancy+colour)+num*crown+wide*length*(glass+card);
+        	}
+        
+	    //数据输出
+	System.out.println("总费用："+cost);
+	}
+}
