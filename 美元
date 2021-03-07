@@ -1,0 +1,37 @@
+package test;
+
+import java.util.Scanner;
+
+public class test1 {
+	public static void main(String[] args) {
+		//数据定义
+	    int Num1;
+		int Num2;
+		int Num50;
+		int Num20;
+		int Num10;
+		int Num5;
+		double money;
+		
+		//数据输入
+		Scanner scan=new Scanner(System.in);
+		//输入提示语
+		System.out.print("输入钱数：");
+		money=scan.nextDouble();
+		//数据运算
+		Num2=(int)money/2;
+		Num1=(int)money-Num2*2;
+		Num50=(int)(money%1/0.5);
+		Num20=(int)((money%1-0.5*Num50)/0.2);
+		Num10=(int)((money%1-0.5*Num50-0.2*Num20)/0.1);
+		Num5=(int)((money%1-0.5*Num50-0.2*Num20-0.1*Num10)/0.05);
+		//数据输出
+		System.out.println("2美元的数量："+Num2);
+		System.out.println("1美元的数量："+Num1);
+		System.out.println("50美分的数量："+Num50);
+		System.out.println("20美分的数量："+Num20);
+		System.out.println("10美分的数量："+Num10);
+		System.out.println("5美分的数量："+Num5);
+		
+	}
+}
