@@ -1,0 +1,30 @@
+package test;
+import java.util.Scanner;
+public class 水仙花数 {
+	public static void main(String[] args) {
+		Scanner scan=new Scanner(System.in);
+		int t,a;
+	    int n;
+	    
+	    System.out.println("输入位数：");
+	    n=scan.nextInt();
+	    
+		for(int i=(int)Math.pow(10, n-1);i<Math.pow(10, n);i++)
+		{
+			t=i;
+			int sum=0;
+			while(t>0) {
+				a=t%10;
+				sum=(int)Math.pow(a, n)+sum;
+				t=t/10;	
+			}
+			
+			if(sum==i) {
+				System.out.println(i);
+			}
+				
+			
+		}
+	}
+
+}
