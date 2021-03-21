@@ -1,0 +1,158 @@
+package test;
+
+import java.util.Scanner;
+
+public class 学生成绩 {
+	
+	public static void main(String[] age)
+	{
+		Scanner scan=new Scanner(System.in);
+		double score[]=null;
+		int choose=menu();
+		while(choose!=6) {
+			switch(choose) {
+			case 1:
+				score=new double[5];
+				input(score);
+				
+				
+				break;                        //输入成绩
+			case 2:
+				if(score==null) 
+				{
+					System.out.println("未输入成绩");
+				}
+				System.out.println("平均成绩为："+getave(score));
+				
+				
+				
+				
+				break;                        //输出平均成绩
+			case 3:
+				if(score==null) 
+				{
+					System.out.println("未输入成绩");
+				}
+				System.out.println("最高成绩为："+getmax(score));
+				
+				
+				
+				break;                       //输出最高成绩
+			case 4:
+				if(score==null) 
+				{
+					System.out.println("未输入成绩");
+				}
+				System.out.println("最低成绩为："+getmin(score));
+				
+				
+				
+				
+				break;                      //输出最低成绩
+			case 5:
+				if(score==null) 
+				{
+					System.out.println("未输入成绩");
+				}
+				output(score);
+				
+				
+				break;                       //按从小到大排序
+			default:
+				System.out.println("输入无效，请重新选择");
+			}
+			choose = menu();
+			
+		}
+		System.out.println("退出程序，欢迎下次使用");
+	}
+	
+	
+	public static int menu() {
+		int choose;
+		System.out.println("------学生成绩系统------");
+		System.out.println("1.输入学生成绩(5个学生)");
+		System.out.println("2.输出学生成绩平均值");
+		System.out.println("3.输出最高成绩");
+		System.out.println("4.输出最低成绩");
+		System.out.println("5.按从小到大排序输出成绩");
+		System.out.println("6.退出");
+		System.out.println("请选择（1~6）");
+	    Scanner scan=new Scanner(System.in);
+		choose = scan.nextInt();
+		return choose;        //输出菜单函数
+
+	}
+	public static void input(double score[]) {
+		
+		System.out.println("输入成绩满分为100且成绩大于0");
+		for(int i=0;i<score.length;i++)
+		{
+			System.out.println("请输入第"+(i+1)+"个学生的成绩：");
+			boolean ok=true;
+			while(ok) {
+				Scanner scan=new Scanner(System.in);
+				score[i]=scan.nextDouble();
+				if(score[i]>100||score[i]<0)
+				{
+					System.out.println("输入成绩无效，请再次输入");
+					
+				}else {
+					ok=false;
+				}
+			}
+		}
+	}                                 //输入成绩
+
+	public static double getave(double score[]) {
+		double sum=0;
+		double average;
+		for(int i=0;i<score.length;i++) {
+			sum=sum+score[i];
+		}
+		average=sum/score.length;
+		return average;
+		
+	}                                   //求平均数函数
+	public static double getmax(double score[]) {
+		double max=0;
+		for(int i=0;i<score.length;i++)
+		{
+			if(max<score[i])
+			{
+				max=score[i];
+			}
+		}
+		return max;
+		
+	}                                       //求最大成绩
+	public static double getmin(double score[]) {
+		double min=100;
+		for(int i=0;i<score.length;i++) 
+		{
+			if(min>score[i])
+			{
+				min=score[i];
+			}
+		}
+		return min;
+	}
+	public static void output(double score[]) {
+		double a;
+		for(int i=0;i<score.length;i++) {
+			for(int j=0;j<score.length-i-1;j++)
+			{
+				if(score[j]>score[j+1])
+				{
+					a=score[j];
+					score[j]=score[j+1];
+					score[j+1]=a;
+				}
+			}
+		}
+		for(int i=0;i<score.length;i++)
+		{
+			System.out.print(score[i]+"  ");
+		}
+	}
+}
