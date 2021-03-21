@@ -1,0 +1,106 @@
+package test;
+import java.util.Scanner;
+public class 两数之间 {
+	public static int first,second;
+	public static void main(String[] args)
+	{
+        	 int choose;
+        	 choose=menu();
+        	 while(choose!=6) {
+        		 switch(choose) {
+        		 case 1:input();
+        		 break;
+        		 case 2:outputji();
+        		 break;
+        		 case 3:outputsum();
+        		 break;
+        		 case 4:outputsqure();
+        		 break;
+        		 case 5:outputjisqure();
+        		 break;
+        		 default:
+        			 System.out.println("输入无效，请重新输入");
+        		 }
+        		 choose=menu();
+        			 
+        		 }
+        	 System.out.println("欢迎下次使用");
+        	 }
+	
+	public static int menu() {
+		int choose=0;
+		System.out.println("=========菜单=========");
+		System.out.println("1.输入两个整数，第一个必须小于第二个");
+		System.out.println("2.输出first和second之间的所有奇数");
+		System.out.println("3.输出first和second之间的所有偶数之和");
+		System.out.println("4.输出1~10之间的所有数字以及他们的平方");
+		System.out.println("5.输出first和second之间的所有奇数的平方和");
+		System.out.println("6.退出");
+		System.out.println("请输入1~6");
+		Scanner scan=new Scanner(System.in);
+		choose=scan.nextInt();
+		return choose;
+		
+	}
+	public static void input() {
+		System.out.println("请输入第一个数；");
+		Scanner scan=new Scanner(System.in);
+		first=scan.nextInt();
+		boolean ok=true;
+		while(ok) {
+			System.out.println("请输入第二个数");
+			second=scan.nextInt();
+			if(second<first)
+			{
+				System.out.println("第二个整数不得小于第一个整数");
+			}else {
+				ok=false;
+			}
+		}
+	}
+	public static void outputji()
+	{
+		System.out.println("first和second之间的所有奇数为：");
+		for(int i=first;i<=second;i++)
+		{
+			if(i%2!=0)
+			{
+				System.out.print(i+"  ");
+			}
+		}
+		System.out.println("");
+	}
+	public static void outputsum()
+	{
+		int sum=0;
+		for(int i=first;i<=second;i++)
+		{
+			if(i%2==0)
+			{
+				sum+=i;
+			}
+		}
+		System.out.println("所有偶数之和为："+sum);
+	}
+	public static void outputsqure() {
+		int sum=0;
+		for(int i=0;i<=10;i++)
+		{
+			sum=sum+i*i;
+		}
+		System.out.println("1~10的平方和为："+sum);
+		
+	}
+	public static void outputjisqure() {
+		int sum=0;
+		for(int i=first;i<=second;i++)
+		{
+			if(i%2!=0)
+			{
+				sum+=i*i;
+			}
+		}
+		System.out.println("first和second之间的奇数平方和为："+sum);
+	}
+
+}
