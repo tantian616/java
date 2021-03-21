@@ -1,0 +1,28 @@
+package test;
+import java.util.Scanner;
+public class 猜数1 {
+	public static void main(String[] age) {
+		int randomnum;
+		int guess;//输入猜测数据
+		
+		randomnum=1+(int)(Math.random()*1000);//产生随机数
+		
+		System.out.println(randomnum);
+		System.out.println("I have a random number 1~1000");
+		System.out.println("Please guess");
+		
+		Scanner scan=new Scanner (System.in);
+		guess=scan.nextInt();
+		
+		if(guess==randomnum) {
+			System.out.println("You are right");
+		}else {
+			if(guess<randomnum) {
+				System.out.println("too low");
+			}else {
+				System.out.println("too high");
+			}
+		}
+	}
+
+}
