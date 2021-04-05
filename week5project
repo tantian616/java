@@ -1,0 +1,70 @@
+package week5;
+
+public class Project {
+	private String projectName;
+	private float budget;
+	private Employee emp1;
+	private Employee emp2;
+	
+	
+	public Project(String projectName,float budget,Employee emp1,Employee emp2)
+	{
+		super();
+		this.projectName=projectName;
+		this.budget=budget;
+		this.emp1=emp1;
+		this.emp2=emp2;
+	}
+	public Project()
+	{
+		super();
+	}
+	public void setProjectName(String projectName)
+	{
+		this.projectName=projectName;
+	}
+	public String getProjectName()
+	{
+		return this.projectName;
+	}
+	public void setBudget(float budget)
+	{
+		this.budget=budget;
+	}
+	public float getBudget()
+	{
+		return this.budget;
+	}
+	public void setEmp1(Employee emp1)
+	{
+		this.emp1=emp1;
+	}
+	public Employee getEmp1()
+	{
+		return this.emp1;
+	}
+	public void setEmp2(Employee emp2)
+	{
+		this.emp2=emp2;
+	}
+	public Employee getEmp2()
+	{
+		return this.emp2;
+	}
+	public String toString()
+	{
+		String info;
+		info="projectName="+this.projectName+"\n";
+		info=info+"budget="+this.budget+"\n";
+		info=info+"emp1:\n";
+		info+=this.emp1.toString()+"\n";
+		info=info+"emp2:\n";
+		info+=this.emp2.toString()+"\n";
+		return info;
+	}
+	public void updateBudget()
+	{
+		this.setBudget(this.getBudget()*1.2f);    //this.budget=this.budget*1.2f
+	}
+
+}
