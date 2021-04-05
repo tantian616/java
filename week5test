@@ -1,0 +1,20 @@
+package week5;
+import java.util.Scanner;
+public class test1 {	
+	public static void main(String[] args)
+	{
+		String date,year,month,day;
+		int pos1,pos2;
+		Scanner scan=new Scanner(System.in);
+		date=scan.next();
+		year=date.substring(0,4);
+		System.out.println(year);
+		pos1=date.indexOf("-");
+		pos2=date.indexOf("-",pos1+1);
+		month=date.substring(pos1+1,pos2);
+		System.out.println(month);
+		day=date.substring(pos2+1);
+		System.out.println(day);
+	}
+
+}
