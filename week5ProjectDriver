@@ -1,0 +1,37 @@
+package week5;
+import java.util.Scanner;
+public class ProjectDriver {
+	public static void main(String[] args)
+	{
+		Scanner scan=new Scanner(System.in);
+		System.out.println("项目名字为：")
+		String projectName=scan.next();
+		System.out.println("项目预算为：")
+		float budget=scan.nextFloat();
+		System.out.println("员工1的ID，名字，部门，工资：")
+		String emp1Id=scan.nextLine();
+		String emp1Name=scan.next();
+		String emp1department=scan.next();
+		double emp1salary=scan.nextDouble();
+		
+		System.out.println("员工2的ID，名字，部门，工资：")
+		String emp2Id=scan.nextLine();
+		String emp2Name=scan.next();
+		String emp2department=scan.next();
+		double emp2salary=scan.nextDouble();
+		
+		Employee emp1=new Employee(emp1ID,emp1Name,emp1department,emp1salary);
+		Employee emp2=new Employee(emp2ID,emp2Name,emp2department,emp2salary);
+		Project project=new Project(projectName,projectSalary,emp1,emp2);
+		
+		project.updateBudge();
+		System.out.println("更新后预算为：",+project.updateBudge());
+		
+		System.out.println(peoject.toString());
+		
+			
+		
+		
+	}
+
+}
