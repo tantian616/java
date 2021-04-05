@@ -1,0 +1,68 @@
+package week5;
+public class Employee {
+	
+		private String id;
+		private String name;
+		private String department;
+		private float baseSalary;
+		
+		
+		//缺省
+		public Employee()
+		{
+			id="0000";
+			name="未知";
+			department="销售";
+			baseSalary=1000f;
+		}
+		public Employee(String id,String name,String department,float baseSalary)
+		{
+			this.id=id;
+			this.name=name;
+			this.department=department;
+			this.baseSalary=baseSalary;
+		}
+		public void setId(String id)
+		{
+			this.id=id;
+		}
+		public String getId()
+		{
+			return this.id;
+		}
+		public void setName(String name)
+		{
+			this.name=name;
+		}
+		public String getName()
+		{
+			return this.name;
+		}
+		public void setDepartment(String department)
+		{
+			this.department=department;
+		}
+		public String getDepartment()
+		{
+			return this.department;
+		}
+		public void setBaseSalary(float baseSalary)
+		{
+			this.baseSalary=baseSalary;
+		}
+		public float getBaseSalary()
+		{
+			return this.baseSalary;
+		}
+		public String toString()
+		{
+			String msg;
+			msg="id:"+this.id;
+			msg+="name:"+this.name;
+			msg+="department"+this.department;
+			msg+="baseSalary"+this.baseSalary;
+			return msg;
+		}
+	}
+
+
