@@ -1,0 +1,26 @@
+package bank;
+
+public class SavingAccount extends BankAccount{
+	private double interestRate;
+	
+	public SavingAccount(String accountnum,double balance,double interestRate)
+	{
+		super(accountnum,balance);
+		this.interestRate=interestRate;
+	}
+
+	public double getInterestRate() {
+		return interestRate;
+	}
+
+	public void setInterestRate(double interestRate) {
+		this.interestRate = interestRate;
+	}
+	
+	public void SavingAccountBalance()
+	{
+		super.setBalance(super.getBalance()*(1+this.interestRate));
+	}
+
+
+}
