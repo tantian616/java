@@ -1,0 +1,30 @@
+package bank;
+
+public class BankAccount {
+	private String accountnum;
+	private double balance;
+	
+	public BankAccount(String accountnum,double balance)
+	{
+		this.accountnum=accountnum;
+		this.balance=balance;
+	}
+
+	public String getAccountnum() {
+		return accountnum;
+	}
+
+	public double getBalance() {
+		return balance;
+	}
+
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+	public String toString()
+	{
+		return "卡号:"+this.accountnum+"余额："+this.balance;
+		
+	}
+
+}
