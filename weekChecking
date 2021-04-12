@@ -1,0 +1,29 @@
+package bank;
+
+public class CheckingAccount extends BankAccount{
+	private double serviceFee;
+
+	public CheckingAccount(String accountnum,double balance,double serviceFee)
+	{
+		super(accountnum,balance);
+		this.serviceFee=serviceFee;
+	}
+	
+	public double getServiceFee() {
+		return serviceFee;
+	}
+	
+	public void setServiceFee(double serviceFee) {
+		this.serviceFee = serviceFee;
+	}
+	
+	public String toString()
+	{
+		return super.toString()+",fee"+this.serviceFee;
+	}
+	public void assessFee()
+	{
+		super.setBalance(super.getBalance()-this.serviceFee);
+	}
+	
+}
