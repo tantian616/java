@@ -1,0 +1,52 @@
+package bank;
+
+public class Customer {
+	private String sss;
+	private String name;
+	private CheckingAccount ca;
+	private SavingAccount sa;
+	public Customer() {
+		super();
+	}
+	public Customer(String sss,String name,CheckingAccount ca,SavingAccount sa){
+		super();
+		this.sss=sss;
+		this.name=name;
+		this.ca=ca;
+		this.sa=sa;
+	}
+	public String getSss() {
+		return sss;
+	}
+	public void setSss(String sss) {
+		this.sss = sss;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public CheckingAccount getCa() {
+		return ca;
+	}
+	public void setCa(CheckingAccount ca) {
+		this.ca = ca;
+	}
+	public SavingAccount getSa() {
+		return sa;
+	}
+	public void setSa(SavingAccount sa) {
+		this.sa = sa;
+	}
+	public String toString()
+	{
+		String msg="";
+		msg="ssn="+this.sss;
+	    msg+="name="+this.name;
+		msg+="SavingAccount="+this.sa.toString();
+		msg+="CheckingAccount="+this.ca.toString();
+		return msg;
+	}
+
+}
